@@ -1,70 +1,135 @@
-# Getting Started with Create React App
+# React Weather App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A React-based weather application that displays current weather and forecast data for a selected location. The app allows users to search for locations, use their current location, and switch between Celsius and Fahrenheit temperature units.
 
-## Available Scripts
+![image](https://github.com/user-attachments/assets/cd037c12-f3b7-4987-977d-e8570d6e0de1)
 
-In the project directory, you can run:
 
-### `npm start`
+## Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Displays current weather information including temperature, weather condition, and location.
+- Provides a 5-day weather forecast.
+- Users can search for any location.
+- Users can use their current location to get weather data.
+- Switch between Celsius and Fahrenheit units.
+- Responsive design.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Technologies Used
 
-### `npm test`
+- React
+- JavaScript (ES6+)
+- CSS
+- OpenWeatherMap API for weather data
+- GeoDB Cities API for location search
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Getting Started
 
-### `npm run build`
+### Prerequisites
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Ensure you have the following installed:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Node.js (v12 or later)
+- npm (v6 or later)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Installation
 
-### `npm run eject`
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/react-weather-app.git
+   cd react-weather-app
+    ```
+    
+2. Install dependencies:
+    ```bash
+    npm install
+    ```
+    
+3. Create a .env file in the root directory and add your API keys:
+    ```
+    REACT_APP_WEATHER_API_KEY=your_openweathermap_api_key
+    REACT_APP_GEO_API_URL=https://wft-geo-db.p.rapidapi.com/v1/geo/cities
+    REACT_APP_GEO_API_KEY=
+    ```
+4. Start the development server:
+    ```
+    npm start
+    ```
+    
+## Directory Structure
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```
+react-weather-app/
+├── public/
+│   ├── icons/
+│   │   ├── Clear.png
+│   │   ├── Clouds.png
+│   │   ├── ...
+│   └── index.html
+├── src/
+│   ├── api.js
+│   ├── components/
+│   │   ├── Credit.js
+│   │   ├── Forecast.js
+│   │   ├── Highlights.js
+│   │   ├── Nav.js
+│   │   ├── Search.js
+│   │   ├── TemperatureUnit.js
+│   │   └── WeatherCard.js
+│   ├── pages/
+│   │   └── IndexPage.js
+│   ├── App.css
+│   ├── App.js
+│   ├── index.css
+│   └── index.js
+└── .env
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Usage
+- Search for a Location: Click on the "Search for places" button, enter the location name, and select from the search results.
+- Use Current Location: Click on the location icon to fetch weather data for your current location.
+- Switch Temperature Units: Click on °C or °F buttons to switch between Celsius and Fahrenheit.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Components
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- **App**: The main application component.
+- **IndexPage**: The main page component containing all weather information and controls.
+- **Credit**: Displays credit information.
+- **Forecast**: Displays the 5-day weather forecast.
+- **Highlights**: Displays weather highlights such as wind status, humidity, visibility, and pressure.
+- **Nav**: Navigation component with search and location buttons.
+- **Search**: Component for searching locations.
+- **TemperatureUnit**: Component for switching temperature units.
+- **WeatherCard**: Displays current weather information.
 
-## Learn More
+## API Configuration
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- **OpenWeatherMap API**:
+    - Sign up at [OpenWeatherMap](https://openweathermap.org/) and get your API key.
+    - Add your API key to the `.env` file:
+        ```env
+        REACT_APP_WEATHER_API_KEY=your_openweathermap_api_key
+        ```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- **GeoDB Cities API**:
+    - Sign up at [RapidAPI](https://rapidapi.com/wirefreethought/api/geodb-cities) and subscribe to the GeoDB Cities API.
+    - Add your API key and the base URL to the `.env` file:
+        ```env
+        REACT_APP_GEO_API_URL=https://wft-geo-db.p.rapidapi.com/v1/geo/cities
+        REACT_APP_GEO_API_KEY=your_rapidapi_key
+        ```
 
-### Code Splitting
+## Contributing
+Feel free to submit issues and enhancement requests.
+- Fork the repository.
+- Create a new branch (git checkout -b feature-branch).
+- Commit your changes (git commit -m 'Add some feature').
+- Push to the branch (git push origin feature-branch).
+- Create a new Pull Request.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Acknowledgements
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- [OpenWeatherMap](https://openweathermap.org/) for the weather API.
+- [GeoDB Cities API](https://rapidapi.com/wirefreethought/api/geodb-cities) for the location search API.
+- [DevChallenges.io](https://devchallenges.io/) for inspiration.
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
